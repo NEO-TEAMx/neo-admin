@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/ae360af17e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Pending Deposits</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <aside id="sidebar" class="js-sidebar">
+            <!-- Content For Sidebar -->
+            <div class="h-100">
+                <div class="logo-a">
+                    <div class="sidebar-logo">
+                    <img src="../image/neo-logo.png" alt="">
+                </div>
+                <a href="#"> NEO</a>
+            </div>
+
+                <ul class="sidebar-nav">
+                    <li class="sidebar-header">
+                        Admin Elements
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">
+                          <i class="fa-solid fa-house pe-2"></i>
+                            Dashboard
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item">
+                      <a href="#" class="sidebar-link collapsed" data-bs-target="#manage-users" data-bs-toggle="collapse"
+                          aria-expanded="false"><i class="fa-solid fa-users pe-2"></i>
+                          Manage-Users 
+                      </a>
+                      <ul id="manage-users" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                          <li class="sidebar-item">
+                              <a href="total-users.html" class="sidebar-link">All Users</a>
+                          </li>
+                          <li class="sidebar-item">
+                              <a href="active-users.html" class="sidebar-link">Active Users</a>
+                          </li>
+                          <li class="sidebar-item">
+                            <a href="#" class="sidebar-link">Email Unverified</a>
+                        </li>
+                        <li class="sidebar-item">
+                          <a href="#" class="sidebar-link">Banned Users</a>
+                        </li>
+                        <li class="sidebar-item">
+                          <a href="../html/login-logs.html" class="sidebar-link">Login Logs</a>
+                        </li>
+                        <li class="sidebar-item">
+                          <a href="../html/send-email-all.html" class="sidebar-link">Send Email</a>
+                        </li>
+                      </ul>
+                  </li>
+
+
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-target="#deposits" data-bs-toggle="collapse"
+                            aria-expanded="false"><i class="fa-solid fa-file-lines pe-2"></i>
+                           Deposit Systems
+                        </a>
+                        <ul id="deposits" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link">Manual Gateways</a>
+                            </li>
+              
+                              <li class="sidebar-item">
+                                <div class="d-flex align-items-center">
+                                  <a href="../html/deposits/pending-deposits.html" class= "sidebar-link me-3">Pending deposits</a>
+                                  <span id="pendingDeposits" class="badge bg-light text-dark p-2"><a href="#">0</a></span>
+                                </div>
+                              </li>
+                              
+                              
+                            <li class="sidebar-item">
+                                <a href="../html/deposits/approved-deposits.html" class="sidebar-link">Approved Deposit</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link">Successful Deposits</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="../html/rejected.html" class="sidebar-link active">Rejected Deposits</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="../html/deposits/all-deposits.html" class="sidebar-link">All Deposits</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-target="#withdraw" data-bs-toggle="collapse"
+                            aria-expanded="false"><i class="fa-solid fa-file-lines pe-2"></i>
+                           Withdraw Systems
+                        </a>
+                        <ul id="withdraw" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link">Withdrawal Dethods</a>
+                            </li>
+
+                            <li class="sidebar-item">
+                              <div class="d-flex align-items-center">
+                                <a href="../html/withdraw/pending-withdrawals.html" class="sidebar-link me-3">Pending Withdrawals</a>
+                                <span id="pendingDeposits" class="badge bg-light text-dark p-2"><a href="#">0</a></span>
+                              </div>
+                            </li>
+
+                            <li class="sidebar-item">
+                                <a href="../html/withdraw/approved-withdrawals.html" class="sidebar-link">Approved Withdrawals</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="" class="sidebar-link">Successful Withdrawals</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="../html/rejected.html" class="sidebar-link">Rejected Withdrawals</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="../html/withdraw/all-withdrawals.html" class="sidebar-link">All Withdrawals</a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-target="#posts" data-bs-toggle="collapse"
+                            aria-expanded="false"><i class="fa-solid fa-sliders pe-2"></i>
+                            Posts
+                        </a>
+                        <ul id="posts" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link">Post 1</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link">Post 2</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link">Post 3</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-target="#auth" data-bs-toggle="collapse"
+                            aria-expanded="false"><i class="fa-regular fa-user pe-2"></i>
+                            Auth
+                        </a>
+                        <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a href="../html/auth/signin.html" class="sidebar-link">Login</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="../html/auth/signup.html" class="sidebar-link">Register</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="../html/auth/forgot-password.html" class="sidebar-link">Forgot Password</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-header">
+                        Multi Level Menu
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-target="#multi" data-bs-toggle="collapse"
+                            aria-expanded="false"><i class="fa-solid fa-share-nodes pe-2"></i>
+                            Multi Dropdown
+                        </a>
+                        <ul id="multi" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link collapsed" data-bs-target="#level-1"
+                                    data-bs-toggle="collapse" aria-expanded="false">Level 1</a>
+                                <ul id="level-1" class="sidebar-dropdown list-unstyled collapse">
+                                    <li class="sidebar-item">
+                                        <a href="#" class="sidebar-link">Level 1.1</a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="#" class="sidebar-link">Level 1.2</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <div class="main">
+            <nav class="navbar navbar-expand px-3 border-bottom justify-content-between">
+                <button class="btn" id="sidebar-toggle" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="">
+                    <!-- Search Bar -->
+                    <form class="form-inline d-flex">
+                        <div class="input-group"> <!-- Wrapping input group for styling -->
+                            <input class="form-control border-0 rounded" type="search" placeholder="Search"
+                                aria-label="Search">
+                            <button class="btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="ml-auto" style="position: absolute; right: 65px;"> <!-- Adjusted for alignment -->
+                    <!-- Notification Bell Icon -->
+                    <div class="ml-auto" style="position: absolute; right: 65px;"> <!-- Adjusted for alignment -->
+                        <!-- Notification Bell Icon -->
+                        <div class="position-relative">
+                          <i class="fas fa-bell notification-icon" style="font-size: 16px; line-height: 16px;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="navbar-collapse">
+                    <!-- add navbar in the class incase things go south -->
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
+                                <img src="../image/profile.jpg" class="avatar img-fluid rounded" alt="">
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <a href="#" class="dropdown-item">Profile</a>
+                                <a href="#" class="dropdown-item">Setting</a>
+                                <a href="#" class="dropdown-item">Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main class="content px-3 py-2">
+                <div class="container-fluid">
+                    <div class="mb-3">
+                        <h4>Admin Dashboard</h4>
+                    </div>
+                    <div class="row">
+                        <div class="body-wrapper">
+                            <div class="bodywrapper__inner">
+
+                                <div class="row align-items-center mb-2 justify-content-between">
+                                    <div class="col-lg-6 col-sm-6">
+                                        <h6 class="page-title">Users-Login Logs</h6>
+                                    </div>
+
+                                </div>
+
+
+
+                                <div class="row mt-2">
+                                    <div class="card b-radius--10">
+                                        <table class="table caption-top">
+                                            <!-- <caption>List of users</caption> -->
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Gateway</th>
+                                                    <th scope="col">Initiated</th>
+                                                    <th scope="col">User</th>
+                                                    <th scope="col">Amount</th>
+                                                    <th scope="col">Status</th>
+                                                    <th scope="col">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td data-label="Gateway | Trx">
+                                                        <span class="font-weight-bold"> TETHER (TRC 20) </span>
+                                                        <br>
+                                                        <small> 2VYRHRW135PE </small>
+                                                    </td>
+
+                                                    <td data-label="Date">
+                                                        18 Nov, 2023 01:10 PM<br>4 weeks ago
+                                                    </td>
+
+                                                    <td data-label="User">
+                                                        <span class="font-weight-bold">Muntasir tawfik mehdhar
+                                                            almuntasir</span>
+                                                        <br>
+                                                        <span class="small">
+                                                            <a
+                                                                href="../html/user-details.html"><span>@</span>Muntasir1111</a>
+                                                        </span>
+                                                    </td>
+
+                                                    <td data-label="Amount">
+                                                        $1200 + <span class="text-danger" data-toggle="tooltip"
+                                                            data-original-title="charge">0 </span>
+                                                        <br>
+                                                        <strong data-toggle="tooltip"
+                                                            data-original-title="Amount with charge">
+                                                            1200 USD
+                                                        </strong>
+                                                    </td>
+
+                                                    <td data-label="Status">
+                                                        <span class="badge btn bg-danger"
+                                                            style="padding: 5px 10px; margin-top: 10px;">Rejected</span>
+                                                    </td>
+                                                    <td data-label="Action">
+                                                        <a href="../html/approve-deposits.html" class="icon-btn"
+                                                            data-toggle="tooltip" title=""
+                                                            data-original-title="Details">
+                                                            <i class="fa-solid fa-desktop"></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <div class="card-footer py-4">
+                                            <nav aria-label="...">
+                                                <ul class="pagination justify-content-end mb-0">
+                                                    <li class="page-item active">
+                                                        <a class="page-link" href="javascript:void(0)">1</a>
+                                                    </li>
+                                                    <li class="page-item">
+                                                        <a class="page-link"
+                                                            href="https://.net/admin/users/all/search?page=2">2</a>
+                                                    </li>
+                                                    <li class="page-item">
+                                                        <a class="page-link"
+                                                            href="https://.net/admin/users/all/search?page=2">
+                                                            <i class="fa fa-angle-right"></i>
+                                                            <span class="sr-only">Next</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div><!-- bodywrapper__inner end -->
+                        </div><!-- body-wrapper end -->
+                    </div>
+            </main>
+
+            <a href="#" class="theme-toggle">
+                <i class="fa-regular fa-moon"></i>
+                <i class="fa-regular fa-sun"></i>
+            </a>
+
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row text-muted">
+                        <div class="col-6 text-start">
+                            <p class="mb-0">
+                                <a href="#" class="text-muted">
+                                    <strong>NEO</strong>
+                                </a>
+                            </p>
+                        </div>
+                        <div class="col-6 text-end">
+                            <ul class="list-inline">
+                                <li class="list-inline-item">
+                                    <a href="#" class="text-muted">Contact</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#" class="text-muted">About Us</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
