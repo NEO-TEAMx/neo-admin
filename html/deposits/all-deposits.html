@@ -10,7 +10,7 @@
     <title>All Deposits</title>
 </head>
 
-<body>
+<body onload="allDeposit()">
     <div class="wrapper">
         <aside id="sidebar" class="js-sidebar">
             <!-- Content For Sidebar -->
@@ -256,9 +256,21 @@
 
                                 <div class="row mt-2">
                                     <div class="card b-radius--10">
-                                        <table class="table caption-top">
-                                            <!-- <caption>List of users</caption> -->
+                                        <table id="table" class="table caption-top">
                                             <thead>
+                                                <tr>
+                                                    <th>Date</th>
+                                                    <th>Amount</th>
+                                                    <th>Email</th>
+                                                    <th>Username</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                            </tbody>
+                                            <!-- <caption>List of users</caption> -->
+                                            <!-- <thead>
                                                 <tr>
                                                     <th scope="col">Gateway</th>
                                                     <th scope="col">Initiated</th>
@@ -400,11 +412,11 @@
                                                         </a>
                                                     </td>
                                                 </tr>
-                                            </tbody>
+                                            </tbody> -->
                                         </table>
 
                                         <div class="card-footer py-4">
-                                            <nav aria-label="...">
+                                            <!-- <nav aria-label="...">
                                                 <ul class="pagination justify-content-end mb-0">
                                                     <li class="page-item active">
                                                         <a class="page-link" href="javascript:void(0)">1</a>
@@ -421,7 +433,7 @@
                                                         </a>
                                                     </li>
                                                 </ul>
-                                            </nav>
+                                            </nav> -->
                                         </div>
                                     </div>
                                 </div>
@@ -453,6 +465,7 @@
                                 <li class="list-inline-item">
                                     <a href="#" class="text-muted">Contact</a>
                                 </li>
+
                                 <li class="list-inline-item">
                                     <a href="#" class="text-muted">About Us</a>
                                 </li>
@@ -464,13 +477,15 @@
         </div>
     </div>
 
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/script.js"></script>
     <script src="../../js/script.js"></script>
+    <script src="../../js/main.browser.js"></script>
+    <script src="../../js/deposit.js"></script>
 </body>
 
 </html>
