@@ -8,7 +8,60 @@
     <script src="https://kit.fontawesome.com/ae360af17e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../../css/style.css">
-    <title>Pending Deposits</title>
+    <title>Update Deposits</title>
+    <style>
+        table {
+          border-collapse: collapse;
+          width: 100%;
+          border: 1px solid #09582e;
+          background-color: transparent;
+        }
+
+        th, td {
+          padding: 8px;
+          text-align: left;
+          border: 1px solid #09582e;
+          color: black;
+          font-size: 14px;
+          background-color: transparent;
+          flex: 1;
+        }
+
+        th {
+          background-color: transparent;
+          border: 1px solid #09582e;
+          
+        }
+
+        tr {
+        display: flex;
+        justify-content: space-between;
+        }
+
+        tr:nth-child(odd) {
+            background-color: transparent;
+        }
+        tr:nth-child(even) {
+            background-color: transparent;
+        }
+        td:nth-child(2) {
+          border-right: 1px solid #09582e; /* Add line after "Bought Hash" column */
+        }
+        tr:last-child td {
+          border-bottom: none; /* Remove border at the last row */
+        }
+        .table-section {
+            padding: 20px;
+            text-align: center;
+        }
+        .table-section h1{
+            color: Black;
+            font-size: 20px;
+            font-weight: 800;
+            font-family: 'Times New Roman', Times, serif;
+            margin-bottom: 1.5rem;
+        }
+    </style>
 </head>
 
 <body>
@@ -82,7 +135,7 @@
 
 
                             <li class="sidebar-item">
-                                <a href="../../html/deposits/approved-deposits.html" class="sidebar-link">Approved Deposit</a>
+                                <a href="../../html/deposits/approve-deposits.html" class="sidebar-link">Approved Deposit</a>
                             </li>
                             <li class="sidebar-item">
                                 <a href="../../html/deposits/successful-deposits.html" class="sidebar-link">Successful Deposits</a>
@@ -130,24 +183,7 @@
                     </li>
 
 
-                    <li class="sidebar-item">
-                        <a href="#" class="sidebar-link collapsed" data-bs-target="#posts" data-bs-toggle="collapse"
-                            aria-expanded="false"><i class="fa-solid fa-sliders pe-2"></i>
-                            Posts
-                        </a>
-                        <ul id="posts" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
-                            <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Post 1</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Post 2</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Post 3</a>
-                            </li>
-                        </ul>
-                    </li>
-
+                   
                     <li class="sidebar-item">
                         <a href="#" class="sidebar-link collapsed" data-bs-target="#auth" data-bs-toggle="collapse"
                             aria-expanded="false"><i class="fa-regular fa-user pe-2"></i>
@@ -236,115 +272,28 @@
                 </div>
             </nav>
 
-            <main class="content px-3 py-2">
-                <div class="container-fluid">
-                    <div class="mb-3">
-                        <h4>Admin Dashboard</h4>
-                    </div>
-                    <div class="row">
-                        <div class="body-wrapper">
-                            <div class="bodywrapper__inner">
-
-                                <div class="row align-items-center mb-2 justify-content-between">
-                                    <div class="col-lg-6 col-sm-6">
-                                        <h6 class="page-title">Users-Login Logs</h6>
-                                    </div>
-
-                                </div>
-
-
-
-                                <div class="row mt-2">
-                                    <div class="card b-radius--10">
-                                        <table class="table caption-top">
-                                            <!-- <caption>List of users</caption> -->
-                                            <thead>
-                                                <tr>
-                                                    <th scope="col">Gateway</th>
-                                                    <th scope="col">Initiated</th>
-                                                    <th scope="col">User</th>
-                                                    <th scope="col">Amount</th>
-                                                    <th scope="col">Status</th>
-                                                    <th scope="col">Action</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td data-label="Gateway | Trx">
-                                                        <span class="font-weight-bold"> TETHER (TRC 20) </span>
-                                                        <br>
-                                                        <small> 2VYRHRW135PE </small>
-                                                    </td>
-
-                                                    <td data-label="Date">
-                                                        18 Nov, 2023 01:10 PM<br>4 weeks ago
-                                                    </td>
-
-                                                    <td data-label="User">
-                                                        <span class="font-weight-bold">Muntasir tawfik mehdhar
-                                                            almuntasir</span>
-                                                        <br>
-                                                        <span class="small">
-                                                            <a
-                                                                href="../../html/user-details.html"><span>@</span>Muntasir1111</a>
-                                                        </span>
-                                                    </td>
-
-                                                    <td data-label="Amount">
-                                                        $1200 + <span class="text-danger" data-toggle="tooltip"
-                                                            data-original-title="charge">0 </span>
-                                                        <br>
-                                                        <strong data-toggle="tooltip"
-                                                            data-original-title="Amount with charge">
-                                                            1200 USD
-                                                        </strong>
-                                                    </td>
-
-                                                    <td data-label="Status">
-                                                        <span class="badge badge-warning btn bg-danger"
-                                                            style="padding: 5px 10px; margin-top: 10px;">Pending</span>
-                                                    </td>
-                                                    <td data-label="Action">
-                                                        <a href="../deposits/approve-deposits.html" class="icon-btn"
-                                                            data-toggle="tooltip" title=""
-                                                            data-original-title="Details">
-                                                            <i class="fa-solid fa-desktop"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-
-                                        <div class="card-footer py-4">
-                                            <nav aria-label="...">
-                                                <ul class="pagination justify-content-end mb-0">
-                                                    <li class="page-item active">
-                                                        <a class="page-link" href="javascript:void(0)">1</a>
-                                                    </li>
-                                                    <li class="page-item">
-                                                        <a class="page-link"
-                                                            href="https://.net/admin/users/all/search?page=2">2</a>
-                                                    </li>
-                                                    <li class="page-item">
-                                                        <a class="page-link"
-                                                            href="https://.net/admin/users/all/search?page=2">
-                                                            <i class="fa fa-angle-right"></i>
-                                                            <span class="sr-only">Next</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </nav>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-                            </div><!-- bodywrapper__inner end -->
-                        </div><!-- body-wrapper end -->
-                    </div>
-            </main>
-
+            <section class="table-section container">
+                <h2>Update deposit Status</h2>
+                <!-- Display error -->
+                <div id="errorMsg" class="error"></div>
+                <div id="successMsg" class="success"></div>
+                
+                <table id="upTable">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Email</th>
+                            <th>Amount</th>    
+                            <th>Transaction_Id</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
+           
+            
             <a href="#" class="theme-toggle">
                 <i class="fa-regular fa-moon"></i>
                 <i class="fa-regular fa-sun"></i>
@@ -377,14 +326,16 @@
         </div>
     </div>
 
-
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/script.js"></script>
     <script src="../../js/script.js"></script>
-    
+    <script src="../../js/main.browser.js"></script>
+    <script src="../../js/updateDeposit.js"></script>
 </body>
 
 </html>

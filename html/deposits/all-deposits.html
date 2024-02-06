@@ -8,9 +8,63 @@
     <script src="https://kit.fontawesome.com/ae360af17e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../css/style.css">
     <title>All Deposits</title>
+    <style>
+        table {
+          border-collapse: collapse;
+          width: 100%;
+          border: 1px solid #09582e;
+          background-color: transparent;
+        }
+
+        th, td {
+          padding: 8px;
+          text-align: left;
+          border: 1px solid #09582e;
+          color: black;
+          font-size: 14px;
+          background-color: transparent;
+          flex: 1;
+        }
+
+        th {
+          background-color: transparent;
+          border: 1px solid #09582e;
+          
+        }
+
+        tr {
+        display: flex;
+        justify-content: space-between;
+        }
+
+        tr:nth-child(odd) {
+            background-color: transparent;
+        }
+        tr:nth-child(even) {
+            background-color: transparent;
+        }
+        td:nth-child(2) {
+          border-right: 1px solid #09582e; /* Add line after "Bought Hash" column */
+        }
+        tr:last-child td {
+          border-bottom: none; /* Remove border at the last row */
+        }
+        .table-section {
+            padding: 20px;
+            text-align: center;
+        }
+        .table-section h1{
+            color: Black;
+            font-size: 20px;
+            font-weight: 800;
+            font-family: 'Times New Roman', Times, serif;
+            margin-bottom: 1.5rem;
+        }
+    </style>
 </head>
 
 <body onload="allDeposit()">
+    
     <div class="wrapper">
         <aside id="sidebar" class="js-sidebar">
             <!-- Content For Sidebar -->
@@ -247,22 +301,22 @@
 
                                 <div class="row align-items-center mb-2 justify-content-between">
                                     <div class="col-lg-6 col-sm-6">
-                                        <h6 class="page-title">ALL DEPOSITS</h6>
+                                        <h3 class="page-title">ALL DEPOSITS</h3>
                                     </div>
 
                                 </div>
 
 
 
-                                <div class="row mt-2">
-                                    <div class="card b-radius--10">
-                                        <table id="table" class="table caption-top">
+                                <div class="table-section">
+                                    <!-- <div class="card b-radius--10"> -->
+                                        <table  id="allTable" class="table">
                                             <thead>
                                                 <tr>
                                                     <th>Date</th>
                                                     <th>Amount</th>
                                                     <th>Email</th>
-                                                    <th>Username</th>
+                                                    <th>Transaction_Id</th>
                                                     <th>Status</th>
                                                 </tr>
                                             </thead>
@@ -435,7 +489,7 @@
                                                 </ul>
                                             </nav> -->
                                         </div>
-                                    </div>
+                                    <!-- </div> -->
                                 </div>
 
 
@@ -477,7 +531,7 @@
         </div>
     </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
@@ -485,7 +539,7 @@
     <script src="../js/script.js"></script>
     <script src="../../js/script.js"></script>
     <script src="../../js/main.browser.js"></script>
-    <script src="../../js/deposit.js"></script>
+    <script src="../../js/allDeposit.js"></script>
 </body>
 
 </html>

@@ -9,6 +9,72 @@
     <link rel="stylesheet" href="../../css/style.css">
     <title>Approve Deposits</title>
     <style>
+        .error{
+            color: rgb(207, 22, 22);
+            margin-top: 5px;
+      font-size: 17px;
+      text-align: center;
+      text-transform: capitalize;
+    }
+    .success{
+            color: rgb(12, 56, 12);
+            margin-top: 5px;
+            font-size: 17px;
+      text-align: center;
+      text-transform: capitalize;
+    }
+        table {
+          border-collapse: collapse;
+          width: 100%;
+          border: 1px solid #09582e;
+          background-color: transparent;
+        }
+
+        th, td {
+          padding: 8px;
+          text-align: left;
+          border: 1px solid #09582e;
+          color: black;
+          font-size: 14px;
+          background-color: transparent;
+          flex: 1;
+        }
+
+        th {
+          background-color: transparent;
+          border: 1px solid #09582e;
+          
+        }
+
+        tr {
+        display: flex;
+        justify-content: space-between;
+        }
+
+        tr:nth-child(odd) {
+            background-color: transparent;
+        }
+        tr:nth-child(even) {
+            background-color: transparent;
+        }
+        td:nth-child(2) {
+          border-right: 1px solid #09582e; /* Add line after "Bought Hash" column */
+        }
+        tr:last-child td {
+          border-bottom: none; /* Remove border at the last row */
+        }
+        .table-section {
+            padding: 20px;
+            text-align: center;
+        }
+        .table-section h1{
+            color: black;
+            font-size: 20px;
+            font-weight: 800;
+            font-family: 'Times New Roman', Times, serif;
+            margin-bottom: 1.5rem;
+        }
+
         .bg-white {
             display: flex;
             align-items: center;
@@ -32,7 +98,7 @@
     </style>
 </head>
 
-<body>
+<body onload="approveDeposit()">
     <div class="wrapper">
         <aside id="sidebar" class="js-sidebar">
             <!-- Content For Sidebar -->
@@ -187,14 +253,9 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="sidebar-header">
-                        Multi Level Menu
-                    </li>
+                    
                     <li class="sidebar-item">
-                        <a href="#" class="sidebar-link collapsed" data-bs-target="#multi" data-bs-toggle="collapse"
-                            aria-expanded="false"><i class="fa-solid fa-share-nodes pe-2"></i>
-                            Multi Dropdown
-                        </a>
+                       
                         <ul id="multi" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                             <li class="sidebar-item">
                                 <a href="#" class="sidebar-link collapsed" data-bs-target="#level-1"
@@ -258,226 +319,26 @@
                 </div>
             </nav>
 
-            <main class="content px-3 py-2">
-                <div class="container-fluid">
-                    <div class="mb-3">
-                        <h4>Admin Dashboard</h4>
-                    </div>
-                    <div class="row">
-                        <div class="body-wrapper">
-                            <div class="bodywrapper__inner">
-
-                                <div class="bodywrapper__inner">
-
-                                    <div class="row align-items-center mb-30 justify-content-between">
-                                        <div class="col-lg-6 col-sm-6">
-                                            <h6 class="page-title">Muntasir1111 requested 1200 USD</h6>
-                                        </div>
-                                        <div class="col-lg-6 col-sm-6 text-sm-right mt-sm-0 mt-3">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-none-30">
-
-
-                                        <div class="col-lg-4 col-md-4 mb-30">
-                                            <div class="card b-radius-10 overflow-hidden box-shadow1">
-                                                <div class="card-body">
-                                                    <h5 class="mb-20 text-muted">Deposit Via TETHER (TRC 20)</h5>
-
-                                                    <div class="p-3 bg-white">
-                                                        <div class="tetherimg-container">
-                                                            <img src="../../image/tether (USDT).png"
-                                                                alt="profile-image"
-                                                                class="b-radius-10 deposit-imgView">
-                                                        </div>
-                                                    </div>
-
-                                                    <ul class="list-group">
-
-                                                        <li
-                                                            class="list-group-item d-flex justify-content-between align-items-center">
-                                                            Date <span class="font-weight-bold">18 Nov, 2023 01:10
-                                                                PM</span>
-                                                        </li>
-
-                                                        <li
-                                                            class="list-group-item d-flex justify-content-between align-items-center">
-                                                            Trx Number <span
-                                                                class="font-weight-bold">2VYRHRW135PE</span>
-                                                        </li>
-                                                        <li
-                                                            class="list-group-item d-flex justify-content-between align-items-center">
-                                                            Username <span class="font-weight-bold">
-                                                                <a
-                                                                    href=".net/admin/user/detail/291">Muntasir1111</a>
-                                                            </span>
-                                                        </li>
-                                                        <li
-                                                            class="list-group-item d-flex justify-content-between align-items-center">
-                                                            Method <span class="font-weight-bold">TETHER (ERC 20)</span>
-                                                        </li>
-                                                        <li
-                                                            class="list-group-item d-flex justify-content-between align-items-center">
-                                                            Amount <span class="font-weight-bold">1200 USD</span>
-                                                        </li>
-
-                                                        <li
-                                                            class="list-group-item d-flex justify-content-between align-items-center">
-                                                            Charge <span class="font-weight-bold">0 USD</span>
-                                                        </li>
-
-                                                        <li
-                                                            class="list-group-item d-flex justify-content-between align-items-center">
-                                                            After Charge <span class="font-weight-bold">1200 USD</span>
-                                                        </li>
-                                                        <li
-                                                            class="list-group-item d-flex justify-content-between align-items-center">
-                                                            Rate <span class="font-weight-bold">1 USD
-                                                                = 1 USDT (TRC 20)</span>
-                                                        </li>
-
-                                                        <li
-                                                            class="list-group-item d-flex justify-content-between align-items-center">
-                                                            Payable <span class="font-weight-bold">1200 USDT (TRC
-                                                                20)</span>
-                                                        </li>
-
-
-                                                        <li
-                                                            class="list-group-item d-flex justify-content-between align-items-center">
-                                                            Status <span
-                                                                class="badge badge-pill bg--warning">Pending</span>
-                                                        </li>
-
-
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-8 col-md-8 mb-30">
-
-                                            <div class="card b-radius--10 overflow-hidden box--shadow1">
-                                                <div class="card-body">
-                                                    <h5 class="card-title mb-50 border-bottom pb-2">User Deposit
-                                                        Information</h5>
-
-
-
-                                                    <div class="row mt-4">
-                                                        <div class="col-md-12">
-                                                            <button class="btn btn-success ml-1 approveBtn"
-                                                                data-dir="" data-id="232" data-info=""
-                                                                data-amount="" data-username=""
-                                                                data-toggle="tooltip" data-original-title="Approve"><i
-                                                                    class="fas fa-check"></i>
-                                                                Approve </button>
-
-
-                                                            <button class="btn btn-danger ml-1 rejectBtn"
-                                                                data-dir="2023/11/18" data-id="232" data-info=""
-                                                                data-amount="" data-username=""
-                                                                data-toggle="tooltip" data-original-title="Reject"><i
-                                                                    class="fas fa-ban"></i>
-                                                                Reject </button>
-                                                        </div>
-
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-
-
-                                    <div id="approveModal" class="modal fade" tabindex="-1" role="dialog">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title">Approve Deposit Confirmation</h5>
-                                                    <button type="button" class="close" data-dismiss="modal"
-                                                        aria-label="Close">
-                                                        <span aria-hidden="true">×</span>
-                                                    </button>
-                                                </div>
-                                                <form action=""
-                                                    method="POST">
-                                                    <input type="hidden" name="_token"
-                                                        value="ThJVgX7NX3DK6LmFNduMSyffEvM8gw0bICKRhnoh"> <input
-                                                        type="hidden" name="id">
-                                                    <div class="modal-body">
-                                                        <p>Are you sure to <span class="font-weight-bold">approve</span>
-                                                            <span
-                                                                class="font-weight-bold withdraw-amount text-success"></span>
-                                                            deposit of <span
-                                                                class="font-weight-bold withdraw-user"></span>?</p>
-
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn--dark"
-                                                            data-dismiss="modal">Close</button>
-                                                        <button type="submit" class="btn btn--success">Approve</button>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                    <div id="rejectModal" class="modal fade" tabindex="-1" role="dialog">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title">Reject Deposit Confirmation</h5>
-                                                    <button type="button" class="close" data-dismiss="modal"
-                                                        aria-label="Close">
-                                                        <span aria-hidden="true">×</span>
-                                                    </button>
-                                                </div>
-                                                <form action="https://pt-finance.net/admin/deposit/reject"
-                                                    method="POST">
-                                                    <input type="hidden" name="_token"
-                                                        value="ThJVgX7NX3DK6LmFNduMSyffEvM8gw0bICKRhnoh"> <input
-                                                        type="hidden" name="id">
-                                                    <div class="modal-body">
-
-                                                        <p>Are you sure to <span class="font-weight-bold">reject</span>
-                                                            <span
-                                                                class="font-weight-bold withdraw-amount text-success"></span>
-                                                            deposit of <span
-                                                                class="font-weight-bold withdraw-user"></span>?</p>
-
-
-                                                        <div class="form-group">
-                                                            <label class="font-weight-bold mt-2">Reason for
-                                                                Rejection</label>
-                                                            <textarea name="message" id="message" class="form-control"
-                                                                rows="5"></textarea>
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn--dark"
-                                                            data-dismiss="modal">Close</button>
-                                                        <button type="submit" class="btn btn--danger">Reject</button>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-
-
-
-                            </div><!-- bodywrapper__inner end -->
-                        </div><!-- body-wrapper end -->
-                    </div>
-            </main>
-
+            <section class="table-section container">
+                <h1>Approve deposits</h1>
+                <!-- Display error -->
+                <div id="errorMsg" class="error"></div>
+                <div id="successMsg" class="success"></div>
+                
+                <table id="tables">
+                    <thead>
+                        <tr>
+                            <th>Email</th>
+                            <th>Username</th>
+                            <th>Balance</th>
+                            <th>Credit Amount</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
+            
             <a href="#" class="theme-toggle">
                 <i class="fa-regular fa-moon"></i>
                 <i class="fa-regular fa-sun"></i>
@@ -510,13 +371,15 @@
         </div>
     </div>
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/script.js"></script>
     <script src="../../js/script.js"></script>
+    <script src="../../js/main.browser.js"></script>
+    <script src="../../js/deposit.js"></script>
 </body>
 
 </html>
