@@ -22,7 +22,7 @@ function displaysuccess(msg){
     
 }
 
-async function fetchAllDeposit(){
+async function fetchAllWithdrawal(){
     
 
     if(await isAuthenticated()){
@@ -30,7 +30,7 @@ async function fetchAllDeposit(){
         try {
             const accessToken = localStorage.getItem("accessToken")
 
-            const response = await fetch(baseUrl+"/all-deposit",{
+            const response = await fetch(baseUrl+"/all-withdrawal",{
                 method: "GET",
                 headers: {
                     'Content-Type': 'application/json',
@@ -57,13 +57,13 @@ async function fetchAllDeposit(){
                 const data = await response.json();
 
                 const {
-                    deposit
+                    withdrawal
                 } = data;
 
-                // console.log(deposit)
-                return deposit;
+                // console.log(withdrawal)
+                return withdrawal;
 
-               
+                
                 
             }
 
@@ -79,12 +79,13 @@ async function fetchAllDeposit(){
 
 }
 
-function renderUserRow(deposit){
+function renderUserRow(withdrawal){
     const row = document.createElement("tr");
     const dateCell = document.createElement("td")
     const emailCell = document.createElement("td")
     const amountCell = document.createElement("td")
     const trxn_idCell = document.createElement("td")
+    const walletCell = document.createElement("td")
     const statusCell = document.createElement("td")
     const btnCell = document.createElement("td")
 
@@ -95,20 +96,22 @@ function renderUserRow(deposit){
     // row.appendChild(cell)
 
 
-    dateCell.textContent = moment(deposit.date).format("DD/MM/YYYY")
+    dateCell.textContent = moment(withdrawal.date).format("DD/MM/YYYY")
     row.appendChild(dateCell)
-    emailCell.textContent = deposit.email;
+    emailCell.textContent = withdrawal.email;
     row.appendChild(emailCell)
-    amountCell.textContent = deposit.amount;
+    amountCell.textContent = withdrawal.payable_amount;
     row.appendChild(amountCell)
-    trxn_idCell.textContent = deposit.transaction_id;
+    trxn_idCell.textContent = withdrawal.transaction_id;
     row.appendChild(trxn_idCell)
-    statusCell.textContent = deposit.approved;
+    walletCell.textContent = withdrawal.walletAddress;
+    row.appendChild(walletCell)
+    statusCell.textContent = withdrawal.approved;
     row.appendChild(statusCell)
     
     const btn = document.createElement("button")
     btn.textContent = "Update"
-    btn.addEventListener('click', () => updateStatus(deposit._id));
+    btn.addEventListener('click', () => updateStatus(withdrawal._id));
     btnCell.appendChild(btn);
     row.appendChild(btnCell)
 
@@ -117,7 +120,7 @@ function renderUserRow(deposit){
 
 
 
-async function updateStatus(depositId){
+async function updateStatus(withdrawalId){
     if(await isAuthenticated()){
         try {
             const accessToken = localStorage.getItem("accessToken")
@@ -127,7 +130,7 @@ async function updateStatus(depositId){
                 approved: true
             }
 
-            const response = await fetch(baseUrl+`/approve-deposit/${depositId}`,{
+            const response = await fetch(baseUrl+`/approve-withdrawal/${withdrawalId}`,{
                 method: "PATCH",
                 headers: {
                     'Content-Type': 'application/json',
@@ -168,14 +171,14 @@ async function updateStatus(depositId){
 }
 
 async function renderDeposits(){
-    const deposits = await fetchAllDeposit()
-    // console.log(deposits)
-    const depositTableBody = document.querySelector("#upTable")
+    const withdrawals = await fetchAllWithdrawal()
+    // console.log(withdrawals)
+    const withdrawalTableBody = document.querySelector("#upwTable")
     
-    deposits.forEach(deposit => {
-        const row = renderUserRow(deposit);
-        // console.log(deposit)
-        depositTableBody.appendChild(row)
+    withdrawals.forEach(withdrawal => {
+        const row = renderUserRow(withdrawal);
+        // console.log(withdrawal)
+        withdrawalTableBody.appendChild(row)
     });
 };
 

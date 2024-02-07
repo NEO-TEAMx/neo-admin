@@ -1,4 +1,4 @@
-const baseUrl = 'https://neoprotocol.onrender.com/api/v1/';
+const baseUrl = 'https://neoprotocol.onrender.com/api/v1/admin';
 // const baseUrl = 'http://localhost:4040/api/v1/admin';
 
 
@@ -76,7 +76,7 @@ async function allWithdrawal(){
                     withdrawal.forEach(data => {
                         const parsedDate = moment(data.date);
                         const formattedTime = parsedDate.format('DD/MM/YYYY')
-                        console.log(data)
+                        // console.log(data)
                         const row = document.createElement("tr");
                         const display = ["date","email","payable_amount","transaction_id", "walletAddress","approved"]
                         display.forEach(column =>{

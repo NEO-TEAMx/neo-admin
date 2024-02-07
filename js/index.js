@@ -1,4 +1,4 @@
-const baseUrl = 'https://neoprotocol.onrender.com/api/v1/';
+const baseUrl = 'https://neoprotocol.onrender.com/api/v1/admin';
 // const baseUrl = 'http://localhost:4040/api/v1/admin';
 
 
@@ -223,6 +223,7 @@ async function resetPassword(){
         displayError("Please provide the needed value(s)")
         return;
     }
+
     if(await isAuthenticated()){
         const accessToken = localStorage.getItem("accessToken")
 

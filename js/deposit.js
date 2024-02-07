@@ -1,4 +1,4 @@
-const baseUrl = 'https://neoprotocol.onrender.com/api/v1/';
+const baseUrl = 'https://neoprotocol.onrender.com/api/v1/admin';
 // const baseUrl = 'http://localhost:4040/api/v1/admin';
 
 

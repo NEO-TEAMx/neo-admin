@@ -1,9 +1,9 @@
-const baseUrl = 'https://neoprotocol.onrender.com/api/v1/';
+const baseUrl = 'https://neoprotocol.onrender.com/api/v1/admin';
 // const baseUrl = 'http://localhost:4040/api/v1/admin';
 
 
 function clearErrors(){
-    const errMsg = document.getElementById('errorMsg');
+    const errMsg = document.getElementById("errorMsg");
     const successMsg = document.getElementById('successMsg')
     errMsg.textContent = '',
     successMsg.textContent =  ''
@@ -30,7 +30,7 @@ function displaysuccess(msg){
 async function allDeposit(){
     const tablebody = document.querySelector("#allTable");
 
-    if(await isAuthenticated){
+    if(await isAuthenticated()){
 
         try {
             const accessToken = localStorage.getItem("accessToken")
