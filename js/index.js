@@ -194,7 +194,7 @@ async function login(){
             formp.disabled = false;
             // displayError("")   
             displaysuccess("Logged in successfully")
-            window.location.href = "../html/dashboard.html"
+            // window.location.href = "../html/dashboard.html"
             
             emailVal = '',
             passwordVal = ''
