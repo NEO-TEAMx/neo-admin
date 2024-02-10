@@ -193,7 +193,7 @@ async function login(){
             btn.disabled = false;
             formp.disabled = false;
             // displayError("")   
-            displaysuccess("Logged in successfully")
+            // displaysuccess("Logged in successfully")
             // window.location.href = "../html/dashboard.html"
             console.log(resp)
             emailVal = '',
