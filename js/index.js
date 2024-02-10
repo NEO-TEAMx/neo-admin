@@ -195,7 +195,7 @@ async function login(){
             // displayError("")   
             displaysuccess("Logged in successfully")
             // window.location.href = "../html/dashboard.html"
-            
+            console.log(resp)
             emailVal = '',
             passwordVal = ''
             
