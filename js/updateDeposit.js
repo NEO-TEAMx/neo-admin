@@ -1,5 +1,5 @@
-const baseUrl = 'https://neoprotocol.onrender.com/api/v1/admin';
-// const baseUrl = 'http://localhost:4040/api/v1/admin';
+// const baseUrl = 'https://neoprotocol.onrender.com/api/v1/admin';
+const baseUrl = 'http://localhost:4040/api/v1/admin';
 
 
 function clearErrors(){
@@ -26,15 +26,17 @@ async function fetchAllDeposit(){
     
 
     if(await isAuthenticated()){
-
+        const accessToken = getCookie("accessToken")
+        const refreshToken = getCookie("refreshToken")
+        
         try {
-            const accessToken = localStorage.getItem("accessToken")
-
+            
             const response = await fetch(baseUrl+"/all-deposit",{
                 method: "GET",
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': accessToken
+                    'AccessToken': accessToken,
+                    'Refresh_Token': refreshToken,
                 },
                 credentials: 'include'
             });
@@ -119,8 +121,11 @@ function renderUserRow(deposit){
 
 async function updateStatus(depositId){
     if(await isAuthenticated()){
+        const accessToken = getCookie("accessToken")
+        const refreshToken = getCookie("refreshToken")
+        
         try {
-            const accessToken = localStorage.getItem("accessToken")
+            
 
          
             const data = {
@@ -131,7 +136,8 @@ async function updateStatus(depositId){
                 method: "PATCH",
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': accessToken
+                    'AccessToken': accessToken,
+                    'Refresh_Token': refreshToken,
                 },
                 credentials: 'include',
                 body: JSON.stringify(data)

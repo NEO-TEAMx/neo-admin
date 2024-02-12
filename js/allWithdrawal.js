@@ -1,5 +1,5 @@
-const baseUrl = 'https://neoprotocol.onrender.com/api/v1/admin';
-// const baseUrl = 'http://localhost:4040/api/v1/admin';
+// const baseUrl = 'https://neoprotocol.onrender.com/api/v1/admin';
+const baseUrl = 'http://localhost:4040/api/v1/admin';
 
 
 function clearErrors(){
@@ -29,17 +29,19 @@ function displaysuccess(msg){
 
 async function allWithdrawal(){
     const tablebody = document.querySelector("#witTable");
-
-    if(await isAuthenticated){
-
+        
+    if(await isAuthenticated()){
+        const accessToken = getCookie("accessToken")
+        const refreshToken = getCookie("refreshToken")
+    
         try {
-            const accessToken = localStorage.getItem("accessToken")
-
+            
             const response = await fetch(baseUrl+"/all-withdrawal",{
                 method: "GET",
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': accessToken
+                    'AccessToken': accessToken,
+                    'Refresh_Token': refreshToken,
                 },
                 credentials: 'include'
             });

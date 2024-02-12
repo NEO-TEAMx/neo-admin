@@ -1,4 +1,29 @@
-async function isAuthenticated() {
+function getCookie(cookieName){
+    let cookies = document.cookie.split(';')
+    for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i].trim().split('=');
+        if(cookie[0] === cookieName){
+            return decodeURIComponent(cookie[1])
+        } 
+    }
+    return null;
+}
+
+
+async function isAuthenticated(){
+    const accessToken = getCookie("accessToken");
+    const refreshToken = getCookie("refreshToken");
+
+    if(accessToken && refreshToken){
+        return true
+    }else{
+        redirectToLogin()
+        return false
+    }
+}
+
+
+async function isAuuthenticated() {
     const accessToken = localStorage.getItem('accessToken');
     if(accessToken){
         const expiraionTime = localStorage.getItem('expires')

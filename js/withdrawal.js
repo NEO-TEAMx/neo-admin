@@ -1,5 +1,5 @@
-const baseUrl = 'https://neoprotocol.onrender.com/api/v1/admin';
-// const baseUrl = 'http://localhost:4040/api/v1/admin';
+// const baseUrl = 'https://neoprotocol.onrender.com/api/v1/admin';
+const baseUrl = 'http://localhost:4040/api/v1/admin';
 
 
 function clearErrors(){
@@ -26,15 +26,17 @@ async function fetchAllWithdrawal(){
     
 
     if(await isAuthenticated()){
-
+        const accessToken = getCookie("accessToken")
+        const refreshToken = getCookie("refreshToken")
+        
         try {
-            const accessToken = localStorage.getItem("accessToken")
-
+            
             const response = await fetch(baseUrl+"/all-withdrawal",{
                 method: "GET",
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': accessToken
+                    'AccessToken': accessToken,
+                    'Refresh_Token': refreshToken,
                 },
                 credentials: 'include'
             });
@@ -122,9 +124,10 @@ function renderUserRow(withdrawal){
 
 async function updateStatus(withdrawalId){
     if(await isAuthenticated()){
+        const accessToken = getCookie("accessToken")
+        const refreshToken = getCookie("refreshToken")
+        
         try {
-            const accessToken = localStorage.getItem("accessToken")
-
          
             const data = {
                 approved: true
@@ -134,7 +137,8 @@ async function updateStatus(withdrawalId){
                 method: "PATCH",
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': accessToken
+                    'AccessToken': accessToken,
+                    'Refresh_Token': refreshToken,
                 },
                 credentials: 'include',
                 body: JSON.stringify(data)

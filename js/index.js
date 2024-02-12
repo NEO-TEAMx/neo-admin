@@ -1,5 +1,5 @@
-const baseUrl = 'https://neoprotocol.onrender.com/api/v1/admin';
-// const baseUrl = 'http://localhost:4040/api/v1/admin';
+// const baseUrl = 'https://neoprotocol.onrender.com/api/v1/admin';
+const baseUrl = 'http://localhost:4040/api/v1/admin';
 
 
 function clearErrors(){
@@ -101,23 +101,29 @@ async function signup(){
         if(response.ok){
             const resp = await response.json();
             
-            const accessToken = response.headers.get('Authorization')
-            
-            const expiraionTime = Date.now() + 2 * 24 *60 * 60 * 1000;
-            
-            setToken(accessToken, expiraionTime)
-            displaysuccess("Registration successful")
-            window.location.href = "../dashboard.html"
+            const accessToken = resp.accessToken;
+            const refreshToken = resp.refreshToken;
+
+            const expiraionTime = new Date();
+            expiraionTime.setTime(expiraionTime.getTime() + (1 * 24 *60 * 60 * 1000))
+
+            const expiresD = new Date();
+            expiresD.setTime(expiresD.getTime() + (3 * 24 * 60 * 60 * 1000))
+        
+            document.cookie = `accessToken=${accessToken}; expires=${expiraionTime.toUTCString()}; path=/; `;
+            document.cookie = `refreshToken=${refreshToken}; expires=${expiresD.toUTCString()}; path=/; `;
             
             usernameVal = '',
             emailVal = '',
             passwordVal = '',
             confirmPasswordVal = ''
 
+            displaysuccess("Registration successful")
             btn.textContent = 'Sign up';
             btn.disabled = false;
             formp.disabled = false;
-           
+            window.location.href = "../dashboard.html"
+            
             return  true;
         }else{
             return false;
@@ -184,18 +190,27 @@ async function login(){
         if(response.ok){
             const resp = await response.json();
             
-            const accessToken = response.headers.get('Authorization')
+            const accessToken = resp.accessToken;
+            const refreshToken = resp.refreshToken;
+
+            // console.log(refreshToken)
+            // console.log(accessToken)
         
+            const expiraionTime = new Date();
+            expiraionTime.setTime(expiraionTime.getTime() + (1 * 24 *60 * 60 * 1000))
+
+            const expiresD = new Date();
+            expiresD.setTime(expiresD.getTime() + (3 * 24 * 60 * 60 * 1000))
+        
+            document.cookie = `accessToken=${accessToken}; expires=${expiraionTime.toUTCString()}; path=/; `;
+            document.cookie = `refreshToken=${refreshToken}; expires=${expiresD.toUTCString()}; path=/; `;
             
-            const expiraionTime = Date.now() + 2 * 24 *60 * 60 * 1000;
-            setToken(accessToken, expiraionTime)
             btn.textContent = 'Sign in';
             btn.disabled = false;
             formp.disabled = false;
-            // displayError("")   
-            // displaysuccess("Logged in successfully")
-            // window.location.href = "../html/dashboard.html"
-            console.log(resp)
+            displaysuccess("Logged in successfully")
+            window.location.href = "../html/dashboard.html"
+            
             emailVal = '',
             passwordVal = ''
             
@@ -225,8 +240,9 @@ async function resetPassword(){
     }
 
     if(await isAuthenticated()){
-        const accessToken = localStorage.getItem("accessToken")
-
+        const accessToken = getCookie("accessToken")
+        const refreshToken = getCookie("refreshToken")
+       
     const data = {
         oldPassword: oldPassword,
         newPassword: newPassword,
@@ -241,7 +257,8 @@ async function resetPassword(){
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': accessToken
+                'AccessToken': accessToken,
+                'Refresh_Token': refreshToken,
             },
             body: JSON.stringify(data),
             credentials:'include'
@@ -293,7 +310,9 @@ async function resetPassword(){
 async function ShowMe(){
     
     if(await isAuthenticated()){
-        const accessToken = localStorage.getItem("accessToken")
+        // const accessToken = document.cookie.match('accessToken')['value']
+        const accessToken = getCookie("accessToken")
+        const refreshToken = getCookie("refreshToken")
         
         try {
             
@@ -301,7 +320,8 @@ async function ShowMe(){
                 method: "GET",
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': accessToken
+                    'AccessToken': accessToken,
+                    'Refresh_Token': refreshToken,
                 },
                 credentials: 'include'
             });
@@ -323,7 +343,7 @@ async function ShowMe(){
                 const data = await response.json();
 
                 
-
+                // console.log(data)
                 const {
                     username,
                     email,
