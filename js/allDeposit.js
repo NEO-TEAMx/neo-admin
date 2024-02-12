@@ -66,14 +66,7 @@ async function allDeposit(){
                     deposit
                 } = data
                 
-                if(deposit.length < 1){
-                    const emptyRow = document.createElement('tr')
-                    const emptyCell = document.createElement('td')
-                    emptyCell.setAttribute('colspan', 2)
-                    emptyCell.textContent = "No deposit currently"
-                    emptyRow.appendChild(emptyCell)
-                    emptyCell.appendChild(emptyRow)
-                }else{
+              
 
                     deposit.forEach(data => {
                         const parsedDate = moment(data.date);
@@ -88,7 +81,7 @@ async function allDeposit(){
                         });
                         tablebody.appendChild(row)
                     });
-                }
+                
 
                 
             }

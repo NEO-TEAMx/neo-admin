@@ -66,14 +66,7 @@ async function allWithdrawal(){
                     withdrawal
                 } = data
                 
-                if(withdrawal.length < 1){
-                    const emptyRow = document.createElement('tr')
-                    const emptyCell = document.createElement('td')
-                    emptyCell.setAttribute('colspan', 2)
-                    emptyCell.textContent = "No withdrawal currently"
-                    emptyRow.appendChild(emptyCell)
-                    emptyCell.appendChild(emptyRow)
-                }else{
+                
 
                     withdrawal.forEach(data => {
                         const parsedDate = moment(data.date);
@@ -88,7 +81,7 @@ async function allWithdrawal(){
                         });
                         tablebody.appendChild(row)
                     });
-                }
+                
 
                 
             }
