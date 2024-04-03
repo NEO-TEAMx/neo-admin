@@ -10,84 +10,148 @@
     <link rel="stylesheet" href="../../css/style.css">
     <title>Approve withdraws</title>
     <style>
-         table {
-          border-collapse: collapse;
-          width: 100%;
-          border: 1px solid #09582e;
-          background-color: transparent;
+        .error {
+            color: rgb(207, 22, 22);
+            margin-top: 5px;
+            font-size: 17px;
+            text-align: center;
+            text-transform: capitalize;
         }
 
-        th, td {
-          padding: 8px;
-          text-align: left;
-          border: 1px solid #09582e;
-          color: black;
-          font-size: 14px;
-          background-color: transparent;
-          flex: 1;
+        .success {
+            color: rgb(12, 56, 12);
+            margin-top: 5px;
+            font-size: 17px;
+            text-align: center;
+            text-transform: capitalize;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #09582e;
+            background-color: transparent;
+            table-layout: fixed;
+            /* Add fixed table layout */
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+            border: 1px solid #09582e;
+            font-size: 14px;
+            background-color: transparent;
+            flex: 1;
         }
 
         th {
-          background-color: transparent;
-          border: 1px solid #09582e;
-          
+            background-color: transparent;
+            border: 1px solid #09582e;
         }
 
         tr {
-        display: flex;
-        justify-content: space-between;
+            display: flex;
+            justify-content: space-between;
         }
 
-        tr:nth-child(odd) {
-            background-color: transparent;
-        }
+        tr:nth-child(odd),
         tr:nth-child(even) {
             background-color: transparent;
         }
+
         td:nth-child(2) {
-          border-right: 1px solid #09582e; /* Add line after "Bought Hash" column */
+            border-right: 1px solid #09582e;
+            /* Add line after "Email" column */
         }
+
         tr:last-child td {
-          border-bottom: none; /* Remove border at the last row */
+            border-bottom: none;
+            /* Remove border at the last row */
         }
+
+        /* Set fixed width for each column */
+        th,
+        td {
+            width: calc(100% / 7);
+            /* Divide the table width equally among 6 columns */
+        }
+
         .table-section {
             padding: 20px;
             text-align: center;
         }
-        .table-section h1{
-            color: Black;
+
+        .table-section h1 {
             font-size: 20px;
             font-weight: 800;
             font-family: 'Times New Roman', Times, serif;
             margin-bottom: 1.5rem;
         }
-/* 
-        @media (max-width: 767px) {
-    .card table {
-        display: block;
-        width: 100%;
-    }
 
-    .card table thead,
-    .card table tbody,
-    .card table th,
-    .card table td,
-    .card table tr {
-        display: block;
-        width: 100%;
-    }
+        .responsive-table {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #09582e;
+            background-color: transparent;
+            table-layout: fixed;
+            overflow-x: auto;
+            /* Enable horizontal scrolling on smaller screens */
+        }
 
-    .card table td[data-label]:before {
-        content: attr(data-label);
-        float: left;
-        font-weight: bold;
-        margin-right: 0.5em;
-    }
-    .card table caption {
-        display: none;
-    }
-} */
+        .responsive-table th,
+        .responsive-table td {
+            padding: 4px;
+            text-align: left;
+            border: 1px solid #09582e;
+            font-size: 8px;
+            background-color: transparent;
+            overflow: hidden;
+        }
 
+        .responsive-table th {
+            background-color: transparent;
+            border: 1px solid #09582e;
+        }
+
+        /* Add media query for smaller screens */
+        @media (max-width: 768px) {
+
+            .responsive-table th,
+            .responsive-table td {
+                font-size: 10px;
+                /* Decrease font size for smaller screens */
+                white-space: nowrap;
+                /* Prevent text wrapping */
+            }
+
+            #upwTable input {
+            border: none;
+            width: 45px;
+            padding: 5px 6px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        }
+
+        #upwTable input {
+            border: none;
+            width: auto;
+            padding: 5px 6px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+
+        #upwTable button {
+            background-color: green;
+            border: none;
+            padding: 5px 6px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+     
     </style>
 </head>
 
@@ -198,7 +262,7 @@
                             </li>
 
                             <li class="sidebar-item">
-                                <a href="../../html/withdraw/approved-withdrawals.html" class="sidebar-link active">Approved Withdrawals</a>
+                                <a href="../../html/withdraw/approved-withdrawals.html" class="sidebar-link active">Approve Withdrawals</a>
                             </li>
                             <li class="sidebar-item">
                                 <a href="../../html/withdraw/successful-withdrawals.html" class="sidebar-link">Successful Withdrawals</a>
@@ -304,13 +368,13 @@
                 <div id="errorMsg" class="error"></div>
                 <div id="successMsg" class="success"></div>
                 
-                <table id="upwTable">
+                <table class="responsive-table" id="upwTable">
                     <thead>
                         <tr>
                             <th>Date</th>
                             <th>Email</th>
                             <th>Amount</th>    
-                            <th>Transaction_Id</th>
+                            <th>Tranx_Id</th>
                             <th>Wallet Add</th>
                             <th>Status</th>
                             <th>Action</th>
