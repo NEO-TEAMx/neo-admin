@@ -11,55 +11,111 @@
     <title>Update Deposits</title>
     <style>
         table {
-          border-collapse: collapse;
-          width: 100%;
-          border: 1px solid #09582e;
-          background-color: transparent;
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #09582e;
+            background-color: transparent;
+            table-layout: fixed;
+            /* Add fixed table layout */
         }
 
-        th, td {
-          padding: 8px;
-          text-align: left;
-          border: 1px solid #09582e;
-          color: black;
-          font-size: 14px;
-          background-color: transparent;
-          flex: 1;
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+            border: 1px solid #09582e;
+            font-size: 14px;
+            background-color: transparent;
+            flex: 1;
         }
 
         th {
-          background-color: transparent;
-          border: 1px solid #09582e;
-          
+            background-color: transparent;
+            border: 1px solid #09582e;
         }
 
         tr {
-        display: flex;
-        justify-content: space-between;
+            display: flex;
+            justify-content: space-between;
         }
 
-        tr:nth-child(odd) {
-            background-color: transparent;
-        }
+        tr:nth-child(odd),
         tr:nth-child(even) {
             background-color: transparent;
         }
+
         td:nth-child(2) {
-          border-right: 1px solid #09582e; /* Add line after "Bought Hash" column */
+            border-right: 1px solid #09582e;
+            /* Add line after "Email" column */
         }
+
         tr:last-child td {
-          border-bottom: none; /* Remove border at the last row */
+            border-bottom: none;
+            /* Remove border at the last row */
         }
+
+        /* Set fixed width for each column */
+        th,
+        td {
+            width: calc(100% / 6);
+            /* Divide the table width equally among 6 columns */
+        }
+
         .table-section {
             padding: 20px;
             text-align: center;
         }
-        .table-section h1{
-            color: Black;
+
+        .table-section h1 {
             font-size: 20px;
             font-weight: 800;
             font-family: 'Times New Roman', Times, serif;
             margin-bottom: 1.5rem;
+        }
+
+        .responsive-table {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #09582e;
+            background-color: transparent;
+            table-layout: fixed;
+            overflow-x: auto;
+            /* Enable horizontal scrolling on smaller screens */
+        }
+
+        .responsive-table th,
+        .responsive-table td {
+            padding: 4px;
+            text-align: left;
+            border: 1px solid #09582e;
+            font-size: 8px;
+            background-color: transparent;
+            overflow: hidden;
+        }
+
+        .responsive-table th {
+            background-color: transparent;
+            border: 1px solid #09582e;
+        }
+
+        /* Add media query for smaller screens */
+        @media (max-width: 768px) {
+
+            .responsive-table th,
+            .responsive-table td {
+                font-size: 10px;
+                /* Decrease font size for smaller screens */
+                white-space: nowrap;
+                /* Prevent text wrapping */
+            }
+        }
+
+        #upTable button {
+            background-color: green;
+            border: none;
+            padding: 5px 6px;
+            cursor: pointer;
+            border-radius: 4px;
         }
     </style>
 </head>
@@ -107,7 +163,7 @@
                             </li>
                             <li class="sidebar-item">
                                 <a href="../../html/login-logs.html" class="sidebar-link">Login Logs</a>
-                              </li>
+                            </li>
                             <li class="sidebar-item">
                                 <a href="../../html/send-email-all.html" class="sidebar-link">Send Email</a>
                             </li>
@@ -127,7 +183,8 @@
 
                             <li class="sidebar-item">
                                 <div class="d-flex align-items-center">
-                                    <a href="../../html/deposits/pending-deposits.html" class="sidebar-link me-3">Pending deposits</a>
+                                    <a href="../../html/deposits/pending-deposits.html"
+                                        class="sidebar-link me-3">Pending deposits</a>
                                     <span id="pendingDeposits" class="badge bg-light text-dark p-2"><a
                                             href="#">0</a></span>
                                 </div>
@@ -135,13 +192,16 @@
 
 
                             <li class="sidebar-item">
-                                <a href="../../html/deposits/approve-deposits.html" class="sidebar-link">Approved Deposit</a>
+                                <a href="../../html/deposits/approve-deposits.html" class="sidebar-link">Approved
+                                    Deposit</a>
                             </li>
                             <li class="sidebar-item">
-                                <a href="../../html/deposits/successful-deposits.html" class="sidebar-link">Successful Deposits</a>
+                                <a href="../../html/deposits/successful-deposits.html" class="sidebar-link">Successful
+                                    Deposits</a>
                             </li>
                             <li class="sidebar-item">
-                                <a href="../../html/deposits/rejected-deposits.html" class="sidebar-link">Rejected Deposits</a>
+                                <a href="../../html/deposits/rejected-deposits.html" class="sidebar-link">Rejected
+                                    Deposits</a>
                             </li>
                             <li class="sidebar-item active">
                                 <a href="../../html/deposits/all-deposits.html" class="sidebar-link">All Deposits</a>
@@ -156,34 +216,40 @@
                         </a>
                         <ul id="withdraw" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                             <li class="sidebar-item">
-                                <a href="../../html/withdraw/withdrawal.html" class="sidebar-link">Withdrawal Methods</a>
+                                <a href="../../html/withdraw/withdrawal.html" class="sidebar-link">Withdrawal
+                                    Methods</a>
                             </li>
 
                             <li class="sidebar-item">
                                 <div class="d-flex align-items-center">
-                                    <a href="../../html/withdraw/pending-withdrawals.html" class="sidebar-link me-3 active">Pending Withdrawals</a>
+                                    <a href="../../html/withdraw/pending-withdrawals.html"
+                                        class="sidebar-link me-3 active">Pending Withdrawals</a>
                                     <span id="pendingDeposits" class="badge bg-light text-dark p-2"><a
                                             href="#">0</a></span>
                                 </div>
                             </li>
 
                             <li class="sidebar-item">
-                                <a href="../../html/withdraw/approved-withdrawals.html" class="sidebar-link">Approved Withdrawals</a>
+                                <a href="../../html/withdraw/approved-withdrawals.html" class="sidebar-link">Approved
+                                    Withdrawals</a>
                             </li>
                             <li class="sidebar-item">
-                                <a href="../../html/withdraw/successful-withdrawals.html" class="sidebar-link">Successful Withdrawals</a>
+                                <a href="../../html/withdraw/successful-withdrawals.html"
+                                    class="sidebar-link">Successful Withdrawals</a>
                             </li>
                             <li class="sidebar-item">
-                                <a href="../../html/withdraw/rejected-withdrawals.html" class="sidebar-link">Rejected Withdrawals</a>
+                                <a href="../../html/withdraw/rejected-withdrawals.html" class="sidebar-link">Rejected
+                                    Withdrawals</a>
                             </li>
                             <li class="sidebar-item">
-                                <a href="../../html/withdraw/all-withdrawals.html" class="sidebar-link">All Withdrawals</a>
+                                <a href="../../html/withdraw/all-withdrawals.html" class="sidebar-link">All
+                                    Withdrawals</a>
                             </li>
                         </ul>
                     </li>
 
 
-                   
+
                     <li class="sidebar-item">
                         <a href="#" class="sidebar-link collapsed" data-bs-target="#auth" data-bs-toggle="collapse"
                             aria-expanded="false"><i class="fa-regular fa-user pe-2"></i>
@@ -247,11 +313,8 @@
 
                 <div class="ml-auto" style="position: absolute; right: 65px;"> <!-- Adjusted for alignment -->
                     <!-- Notification Bell Icon -->
-                    <div class="ml-auto" style="position: absolute; right: 65px;"> <!-- Adjusted for alignment -->
-                        <!-- Notification Bell Icon -->
-                        <div class="position-relative">
-                          <i class="fas fa-bell notification-icon" style="font-size: 16px; line-height: 16px;"></i>
-                        </div>
+                    <div class="position-relative">
+                        <i class="fas fa-bell notification-icon" style="font-size: 16px; line-height: 16px;"></i>
                     </div>
                 </div>
 
@@ -277,14 +340,14 @@
                 <!-- Display error -->
                 <div id="errorMsg" class="error"></div>
                 <div id="successMsg" class="success"></div>
-                
-                <table id="upTable">
+
+                <table class="responsive-table" id="upTable">
                     <thead>
                         <tr>
                             <th>Date</th>
                             <th>Email</th>
-                            <th>Amount</th>    
-                            <th>Transaction_Id</th>
+                            <th>Amount</th>
+                            <th>Tranx_Id</th>
                             <th>Status</th>
                             <th>Action</th>
                         </tr>
@@ -292,8 +355,8 @@
                     <tbody></tbody>
                 </table>
             </section>
-           
-            
+
+
             <a href="#" class="theme-toggle">
                 <i class="fa-regular fa-moon"></i>
                 <i class="fa-regular fa-sun"></i>
@@ -317,7 +380,7 @@
                                 <li class="list-inline-item">
                                     <a href="#" class="text-muted">About Us</a>
                                 </li>
-              
+
                             </ul>
                         </div>
                     </div>
@@ -326,7 +389,7 @@
         </div>
     </div>
 
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

@@ -61,6 +61,32 @@
             font-family: 'Times New Roman', Times, serif;
             margin-bottom: 1.5rem;
         }
+/* 
+        @media (max-width: 767px) {
+    .card table {
+        display: block;
+        width: 100%;
+    }
+
+    .card table thead,
+    .card table tbody,
+    .card table th,
+    .card table td,
+    .card table tr {
+        display: block;
+        width: 100%;
+    }
+
+    .card table td[data-label]:before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        margin-right: 0.5em;
+    }
+    .card table caption {
+        display: none;
+    }
+} */
 
     </style>
 </head>
@@ -251,11 +277,8 @@
 
                 <div class="ml-auto" style="position: absolute; right: 65px;"> <!-- Adjusted for alignment -->
                     <!-- Notification Bell Icon -->
-                    <div class="ml-auto" style="position: absolute; right: 65px;"> <!-- Adjusted for alignment -->
-                        <!-- Notification Bell Icon -->
-                        <div class="position-relative">
-                          <i class="fas fa-bell notification-icon" style="font-size: 16px; line-height: 16px;"></i>
-                        </div>
+                    <div class="position-relative">
+                      <i class="fas fa-bell notification-icon" style="font-size: 16px; line-height: 16px;"></i>
                     </div>
                 </div>
 
