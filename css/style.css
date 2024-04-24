@@ -343,6 +343,11 @@ html[data-bs-theme="light"] .theme-toggle .fa-sun {
   .card table tbody td:last-child {
     border-bottom: none;
   }
+
+  .magnifying-glass{
+    position: relative;
+    left: -40px;
+  }
 }
 
 .fa-desktop {

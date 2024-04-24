@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/ae360af17e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <title>Approve Withdrawals</title>
+    <style>
+        .bg-white {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tetherimg-container {
+            width: 100px;
+            height: 100px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tetherimg-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <aside id="sidebar" class="js-sidebar">
+            <!-- Content For Sidebar -->
+            <div class="h-100">
+                <div class="logo-a">
+                    <div class="sidebar-logo">
+                        <img src="../../image/neo-logo.png" alt="">
+                    </div>
+                    <a href="#"> NEO</a>
+                </div>
+
+                <ul class="sidebar-nav">
+                    <li class="sidebar-header">
+                        Admin Elements
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">
+                          <i class="fa-solid fa-house pe-2"></i>
+                            Dashboard
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item">
+                      <a href="#" class="sidebar-link collapsed" data-bs-target="#manage-users" data-bs-toggle="collapse"
+                          aria-expanded="false"><i class="fa-solid fa-users pe-2"></i>
+                          Manage-Users 
+                      </a>
+                      <ul id="manage-users" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                          <li class="sidebar-item">
+                              <a href="../total-users.html" class="sidebar-link">All Users</a>
+                          </li>
+                          <li class="sidebar-item">
+                              <a href="../active-users.html" class="sidebar-link">Active Users</a>
+                          </li>
+                          <li class="sidebar-item">
+                            <a href="#" class="sidebar-link">Email Unverified</a>
+                        </li>
+                        <li class="sidebar-item">
+                          <a href="#" class="sidebar-link">Banned Users</a>
+                        </li>
+                        <li class="sidebar-item">
+                          <a href="../loginlogs.html" class="sidebar-link">Login Logs</a>
+                        </li>
+                        <li class="sidebar-item">
+                          <a href="../html/send-email-all.html" class="sidebar-link">Send Email</a>
+                        </li>
+                      </ul>
+                  </li>
+
+
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-target="#deposits" data-bs-toggle="collapse"
+                            aria-expanded="false"><i class="fa-solid fa-file-lines pe-2"></i>
+                           Deposit Systems
+                        </a>
+                        <ul id="deposits" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            
+              
+                              <li class="sidebar-item">
+                                <div class="d-flex align-items-center">
+                                  <a href="../html/deposits/pending-deposits.html" class= "sidebar-link me-3">Pending deposits</a>
+                                  <span id="pendingDeposits" class="badge bg-light text-dark p-2"><a href="#">0</a></span>
+                                </div>
+                              </li>
+                              
+                              
+                            <li class="sidebar-item">
+                                <a href="../html/deposits/approve-deposits.html" class="sidebar-link">Approve Deposit</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link">Successful Deposits</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="../html/rejected.html" class="sidebar-link">Rejected Deposits</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="../html/deposits/all-deposits.html" class="sidebar-link">All Deposits</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-target="#withdraw" data-bs-toggle="collapse"
+                            aria-expanded="false"><i class="fa-solid fa-file-lines pe-2"></i>
+                           Withdraw Systems
+                        </a>
+                        <ul id="withdraw" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link">Withdrawal Methods</a>
+                            </li>
+
+                            <li class="sidebar-item">
+                              <div class="d-flex align-items-center">
+                                <a href="../html/withdraw/pending-withdrawals.html" class="sidebar-link me-3">Pending Withdrawals</a>
+                                <span id="pendingDeposits" class="badge bg-light text-dark p-2"><a href="#">0</a></span>
+                              </div>
+                            </li>
+
+                            <li class="sidebar-item">
+                                <a href="../html/withdraw/approve-withdrawals.html" class="sidebar-link">Approve Withdrawals</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="" class="sidebar-link">Successful Withdrawals</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="../html/rejected.html" class="sidebar-link">Rejected Withdrawals</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="../html/withdraw/all-withdrawals.html" class="sidebar-link">All Withdrawals</a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+
+                    
+
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-target="#auth" data-bs-toggle="collapse"
+                            aria-expanded="false"><i class="fa-regular fa-user pe-2"></i>
+                            User
+                        </a>
+                        <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a href="../html/showme.html" class="sidebar-link">Show me</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="../html/auth/forgot-password.html" class="sidebar-link">Change password</a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                      
+                </ul>
+
+            </div>
+        </aside>
+
+        <div class="main">
+            <nav class="navbar navbar-expand px-3 border-bottom justify-content-between">
+                <button class="btn" id="sidebar-toggle" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="">
+                    <!-- Search Bar -->
+                    <form class="form-inline d-flex">
+                        <div class="input-group"> <!-- Wrapping input group for styling -->
+                            <input class="form-control border-0 rounded" type="search" placeholder="Search"
+                                aria-label="Search">
+                            <button class="btn magnifying-glass" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="ml-auto" style="position: absolute; right: 65px;"> <!-- Adjusted for alignment -->
+                    <!-- Notification Bell Icon -->
+                    <div class="position-relative">
+                      <i class="fas fa-bell notification-icon" style="font-size: 16px; line-height: 16px;"></i>
+                    </div>
+                </div>
+
+                <div class="navbar-collapse">
+                    <!-- add navbar in the class incase things go south -->
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
+                                <img src="../../image/profile.jpg" class="avatar img-fluid rounded" alt="">
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <a href="#" class="dropdown-item">Profile</a>
+                                <a href="#" class="dropdown-item">Setting</a>
+                                <a href="#" class="dropdown-item">Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main class="content px-3 py-2">
+                <div class="container-fluid">
+                    <div class="mb-3">
+                        <h4>Admin Dashboard</h4>
+                    </div>
+                    <div class="row">
+                        <div class="body-wrapper">
+                            <div class="bodywrapper__inner">
+
+                                <div class="bodywrapper__inner">
+
+                                    <div class="row align-items-center mb-30 justify-content-between">
+                                        <div class="col-lg-6 col-sm-6">
+                                            <h6 class="page-title">Muntasir1111 requested 1200 USD</h6>
+                                        </div>
+                                        <div class="col-lg-6 col-sm-6 text-sm-right mt-sm-0 mt-3">
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-none-30">
+
+
+                                        <div class="col-lg-4 col-md-4 mb-30">
+                                            <div class="card b-radius-10 overflow-hidden box-shadow1">
+                                                <div class="card-body">
+                                                    <h5 class="mb-20 text-muted">Withdrawal Via TETHER (TRC 20)</h5>
+
+                                                    <div class="p-3 bg-white">
+                                                        <div class="tetherimg-container">
+                                                            <img src="../../image/tether (USDT).png"
+                                                                alt="profile-image"
+                                                                class="b-radius-10 deposit-imgView">
+                                                        </div>
+                                                    </div>
+
+                                                    <ul class="list-group">
+
+                                                        <li
+                                                            class="list-group-item d-flex justify-content-between align-items-center">
+                                                            Date <span class="font-weight-bold">18 Nov, 2023 01:10
+                                                                PM</span>
+                                                        </li>
+
+                                                        <li
+                                                            class="list-group-item d-flex justify-content-between align-items-center">
+                                                            Trx Number <span
+                                                                class="font-weight-bold">2VYRHRW135PE</span>
+                                                        </li>
+                                                        <li
+                                                            class="list-group-item d-flex justify-content-between align-items-center">
+                                                            Username <span class="font-weight-bold">
+                                                                <a
+                                                                    href=".net/admin/user/detail/291">Muntasir1111</a>
+                                                            </span>
+                                                        </li>
+                                                        <li
+                                                            class="list-group-item d-flex justify-content-between align-items-center">
+                                                            Method <span class="font-weight-bold">TETHER (ERC 20)</span>
+                                                        </li>
+                                                        <li
+                                                            class="list-group-item d-flex justify-content-between align-items-center">
+                                                            Amount <span class="font-weight-bold">1200 USD</span>
+                                                        </li>
+
+                                                        <li
+                                                            class="list-group-item d-flex justify-content-between align-items-center">
+                                                            Charge <span class="font-weight-bold">0 USD</span>
+                                                        </li>
+
+                                                        <li
+                                                            class="list-group-item d-flex justify-content-between align-items-center">
+                                                            After Charge <span class="font-weight-bold">1200 USD</span>
+                                                        </li>
+                                                        <li
+                                                            class="list-group-item d-flex justify-content-between align-items-center">
+                                                            Rate <span class="font-weight-bold">1 USD
+                                                                = 1 USDT (TRC 20)</span>
+                                                        </li>
+
+                                                        <li
+                                                            class="list-group-item d-flex justify-content-between align-items-center">
+                                                            Payable <span class="font-weight-bold">1200 USDT (TRC
+                                                                20)</span>
+                                                        </li>
+
+
+                                                        <li
+                                                            class="list-group-item d-flex justify-content-between align-items-center">
+                                                            Status <span
+                                                                class="badge badge-pill bg-danger">Pending</span>
+                                                        </li>
+
+
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8 col-md-8 mb-30">
+
+                                            <div class="card b-radius--10 overflow-hidden box--shadow1">
+                                                <div class="card-body">
+                                                    <h5 class="card-title mb-50 border-bottom pb-2">User Withdrawal
+                                                        Information</h5>
+
+
+
+                                                    <div class="row mt-4">
+                                                        <div class="col-md-12">
+                                                            <button class="btn btn-success ml-1 approveBtn"
+                                                                data-dir="" data-id="232" data-info=""
+                                                                data-amount="" data-username=""
+                                                                data-toggle="tooltip" data-original-title="Approve"><i
+                                                                    class="fas fa-check"></i>
+                                                                Approve </button>
+
+
+                                                            <button class="btn btn-danger ml-1 rejectBtn"
+                                                                data-dir="2023/11/18" data-id="232" data-info=""
+                                                                data-amount="" data-username=""
+                                                                data-toggle="tooltip" data-original-title="Reject"><i
+                                                                    class="fas fa-ban"></i>
+                                                                Reject </button>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+                                    <div id="approveModal" class="modal fade" tabindex="-1" role="dialog">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title">Approve Deposit Confirmation</h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                        <span aria-hidden="true">×</span>
+                                                    </button>
+                                                </div>
+                                                <form action=""
+                                                    method="POST">
+                                                    <input type="hidden" name="_token"
+                                                        value="ThJVgX7NX3DK6LmFNduMSyffEvM8gw0bICKRhnoh"> <input
+                                                        type="hidden" name="id">
+                                                    <div class="modal-body">
+                                                        <p>Are you sure to <span class="font-weight-bold">approve</span>
+                                                            <span
+                                                                class="font-weight-bold withdraw-amount text-success"></span>
+                                                            deposit of <span
+                                                                class="font-weight-bold withdraw-user"></span>?</p>
+
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn--dark"
+                                                            data-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn--success">Approve</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div id="rejectModal" class="modal fade" tabindex="-1" role="dialog">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title">Reject Deposit Confirmation</h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                        <span aria-hidden="true">×</span>
+                                                    </button>
+                                                </div>
+                                                <form action="https://pt-finance.net/admin/deposit/reject"
+                                                    method="POST">
+                                                    <input type="hidden" name="_token"
+                                                        value="ThJVgX7NX3DK6LmFNduMSyffEvM8gw0bICKRhnoh"> <input
+                                                        type="hidden" name="id">
+                                                    <div class="modal-body">
+
+                                                        <p>Are you sure to <span class="font-weight-bold">reject</span>
+                                                            <span
+                                                                class="font-weight-bold withdraw-amount text-success"></span>
+                                                            deposit of <span
+                                                                class="font-weight-bold withdraw-user"></span>?</p>
+
+
+                                                        <div class="form-group">
+                                                            <label class="font-weight-bold mt-2">Reason for
+                                                                Rejection</label>
+                                                            <textarea name="message" id="message" class="form-control"
+                                                                rows="5"></textarea>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn--dark"
+                                                            data-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn--danger">Reject</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+
+
+                            </div><!-- bodywrapper__inner end -->
+                        </div><!-- body-wrapper end -->
+                    </div>
+            </main>
+
+            <a href="#" class="theme-toggle">
+                <i class="fa-regular fa-moon"></i>
+                <i class="fa-regular fa-sun"></i>
+            </a>
+
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row text-muted">
+                        <div class="col-6 text-start">
+                            <p class="mb-0">
+                                <a href="#" class="text-muted">
+                                    <strong>NEO</strong>
+                                </a>
+                            </p>
+                        </div>
+                        <div class="col-6 text-end">
+                            <ul class="list-inline">
+                                <li class="list-inline-item">
+                                    <a href="#" class="text-muted">Contact</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#" class="text-muted">About Us</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../../js/script.js"></script>
+</body>
+
+</html>
