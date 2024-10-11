@@ -45,7 +45,7 @@ async function isAuuthenticated() {
 }
 
 function redirectToLogin(){
-    window.location.href = '../../index.html'
+    window.location.href = '../index.html'
 };
 
 

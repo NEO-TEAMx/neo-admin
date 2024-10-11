@@ -122,8 +122,146 @@
 
 <body>
     <div class="wrapper">
+       <!-- new one -->
         <aside id="sidebar" class="js-sidebar">
-            <!-- Content For Sidebar -->
+        
+            <div class="h-100">
+                <div class="logo-a">
+                    <div class="sidebar-logo">
+                        <img src="../../image/neo-logo.png" alt="">
+                    </div>
+                    <a href="#"> NEO</a>
+                </div>
+        
+                <ul class="sidebar-nav">
+                    <li class="sidebar-header">
+                        Admin Panel
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">
+                            <i class="fa-solid fa-house pe-2"></i>
+                            Dashboard
+                        </a>
+                    </li>
+        
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-target="#manage-users" data-bs-toggle="collapse"
+                            aria-expanded="false"><i class="fa-solid fa-users pe-2"></i>
+                            Manage-Users
+                        </a>
+                        <ul id="manage-users" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a href="../total-users.html" class="sidebar-link">All Users</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="../active-users.html" class="sidebar-link">Active Users</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link">Email Unverified</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link">Banned Users</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="../loginlogs.html" class="sidebar-link">Login Logs</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="../html/send-email-all.html" class="sidebar-link">Send Email</a>
+                            </li>
+                        </ul>
+                    </li>
+        
+        
+                    <li class="sidebar-item">
+                        <a href="./all-deposits.html" class="sidebar-link collapsed" data-bs-target="#deposits"
+                            data-bs-toggle="collapse" aria-expanded="false"><i class="fa-solid fa-file-lines pe-2"></i>
+                            Deposit Systems
+                        </a>
+                        <ul id="deposits" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+        
+        
+                            <li class="sidebar-item">
+                                <div class="d-flex align-items-center">
+                                    <a href="./deposits/pending-deposits.html" class="sidebar-link me-3">Pending deposits</a>
+                                    <span id="pendingDeposits" class="badge bg-light text-dark p-2"><a href="#">0</a></span>
+                                </div>
+                            </li>
+        
+        
+                            <li class="sidebar-item">
+                                <a href="./deposits/approve-deposits.html" class="sidebar-link">Approve Deposit</a>
+                            </li>
+                            <!-- <li class="sidebar-item">
+                                        <a href="#" class="sidebar-link">Successful Deposits</a>
+                                    </li> -->
+                            <!-- <li class="sidebar-item">
+                                        <a href="../html/rejected.html" class="sidebar-link">Rejected Deposits</a>
+                                    </li> -->
+                            <li class="sidebar-item">
+                                <a href="./all-deposits.html" class="sidebar-link">All Deposits</a>
+                            </li>
+                        </ul>
+                    </li>
+        
+                    <li class="sidebar-item">
+                        <a href="../withdraw/all-withdrawals.html" class="sidebar-link collapsed" data-bs-target="#withdraw"
+                            data-bs-toggle="collapse" aria-expanded="false"><i class="fa-solid fa-file-lines pe-2"></i>
+                            Withdraw Systems
+                        </a>
+                        <ul id="withdraw" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link">Withdrawal Methods</a>
+                            </li>
+        
+                            <li class="sidebar-item">
+                                <div class="d-flex align-items-center">
+                                    <a href="../withdraw/pending-withdrawals.html" class="sidebar-link me-3">Pending
+                                        Withdrawals</a>
+                                    <span id="pendingDeposits" class="badge bg-light text-dark p-2"><a href="#">0</a></span>
+                                </div>
+                            </li>
+        
+                            <li class="sidebar-item">
+                                <a href="../withdraw/approve-withdrawals.html" class="sidebar-link">Approve Withdrawals</a>
+                            </li>
+                            <!-- <li class="sidebar-item">
+                                        <a href="" class="sidebar-link">Successful Withdrawals</a>
+                                    </li> -->
+                            <!-- <li class="sidebar-item">
+                                        <a href="../html/rejected.html" class="sidebar-link">Rejected Withdrawals</a>
+                                    </li> -->
+                            <li class="sidebar-item">
+                                <a href="../withdraw/all-withdrawals.html" class="sidebar-link">All Withdrawals</a>
+                            </li>
+                        </ul>
+                    </li>
+        
+        
+        
+        
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-target="#auth" data-bs-toggle="collapse"
+                            aria-expanded="false"><i class="fa-regular fa-user pe-2"></i>
+                            User
+                        </a>
+                        <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a href="../html/showme.html" class="sidebar-link">Show me</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="../html/auth/forgot-password.html" class="sidebar-link">Change password</a>
+                            </li>
+                        </ul>
+                    </li>
+        
+        
+                </ul>
+            </div>
+        </aside>
+
+        <!-- old one -->
+        <!-- <aside id="sidebar" class="js-sidebar">
+
             <div class="h-100">
                 <div class="logo-a">
                     <div class="sidebar-logo">
@@ -256,7 +394,7 @@
                 </ul>
 
             </div>
-        </aside>
+        </aside> -->
 
         <div class="main">
             <nav class="navbar navbar-expand px-3 border-bottom justify-content-between">

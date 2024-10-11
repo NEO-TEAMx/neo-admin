@@ -1,6 +1,6 @@
-const baseUrl = 'https://neoprotocol.onrender.com/api/v1/admin';
+// const baseUrl = 'https://neoprotocol.onrender.com/api/v1/admin';
 // const baseUrl = 'http://localhost:4040/api/v1/admin';
-
+const baseUrl = 'https://neo-protocol.com/api/v1/admin';
 
 function clearErrors(){
     const errMsg = document.getElementById('errorMsg');
